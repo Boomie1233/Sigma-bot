@@ -1,12 +1,11 @@
 import nextcord
 import random
 from nextcord.ext import commands
-from nextcord.abc import GuildChannel
-from nextcord import Interaction, interactions, SlashOption, ChannelType
+from nextcord import Interaction
 
 
 class slash(commands.cog):
-    def _init__(self, bot):
+    def __init__(self, bot):
         self.bot = bot
 
     @nextcord.slash_command(name = "dhillan", description= "Give dhillan dialogues")
