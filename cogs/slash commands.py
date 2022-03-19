@@ -8,7 +8,7 @@ class slash(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @nextcord.slash_command(name = "dhillan", description= "Give dhillan dialogues", force_global= True)
+    @nextcord.slash_command(name = "dhillan", description= "Give dhillan dialogues", guild_ids= ["808704986485620736", "947151111037526096", "910811019608223754"])
     async def dhillan(self, interaction: Interaction):
         dhillan = [
                "all hates me anyways",
