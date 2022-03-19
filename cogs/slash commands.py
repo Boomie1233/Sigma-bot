@@ -36,6 +36,9 @@ class slash(commands.cog):
         await Interaction.response.send_message(dhillan)
 
 
+def setup(bot):
+    bot.add_cog(slash(bot))
+
 
 
 
