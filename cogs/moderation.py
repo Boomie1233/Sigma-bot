@@ -19,6 +19,14 @@ class Moderation(commands.Cog):
     else:
       await ctx.send("We dont support overthrowing people here. PREIOD")
 
+  @kick.error()
+  async def kick_error(self, ctx, error: commands.CommandError):
+    if isinstance(error, commands.MissingRequiredArgument):
+      embed = nextcord.Embed(title = f"Command: Kick", description = " Syntax: kick <member> <reason>\n This command kicks a member ")
+      await ctx.send(embed = embed)
+      
+
+
 
 
   @commands.command()
