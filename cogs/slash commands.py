@@ -4,7 +4,7 @@ from nextcord.ext import commands
 from nextcord import Interaction
 
 
-class slash(commands.cog):
+class slash(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
