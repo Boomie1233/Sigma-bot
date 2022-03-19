@@ -10,7 +10,7 @@ class slash(commands.cog):
         self.bot = bot
 
     @nextcord.slash_command(name = "dhillan", description= "Give dhillan dialogues")
-    async def dhillan(self, Interaction: Interaction):
+    async def dhillan(self, interaction: Interaction):
         dhillan = [
                "all hates me anyways",
         "think what u want",
@@ -33,7 +33,7 @@ class slash(commands.cog):
         "tududududdududud"
         ]
         dhillan = random.choice(dhillan)
-        await Interaction.response.send_message(dhillan)
+        await interaction.response.send_message(dhillan)
 
 
 def setup(bot):
