@@ -2,6 +2,7 @@ import os
 import nextcord
 import random
 import asyncio
+from nextcord import Interaction
 from nextcord import Intents
 from nextcord.ext import commands
 
@@ -64,9 +65,9 @@ async def poll(ctx, title, optionone=None, optiontwo=None):
     await message.add_reaction("2️⃣")
 
 
-@bot.command()
-async def dhillan(ctx):
-    dialogues = [
+@bot.slash_command(name = "dhillan", description= "gives dhillan dialogues", guild_ids= [808704986485620736, 910811019608223754, 947151111037526096])
+async def dhillan(interaction: Interaction):
+    dhillan = [
         "all hates me anyways",
         "think what u want",
         "tell what u want",
@@ -87,8 +88,9 @@ async def dhillan(ctx):
         "GOOGLE SEND 100 GUNDAAS TO MAAM'S HOUSE",
         "tududududdududud",
     ]
-    dialogues = random.choice(dialogues)
-    await ctx.send(dialogues)
+    dhillan = random.choice(dhillan)
+    await interaction.response.send_message(dhillan)
+
 
 
 @bot.command()
@@ -161,12 +163,9 @@ async def timedpoll(ctx, title,time, optionone=None, optiontwo=None):
     await ctx.send("The poll is done")
 
 
-@bot.command()
-async def amna(ctx):
-  replies = ["404 Not found error. Please try again", 
-            "Sigma bot jumped off a cliff  after seeing how ugly amna looked like", "Amna is soo casual that putin will spare ukraine and send troops to her house instead", "Sigma bot systems got overloaded with cringe", "Amna's stupidity is more fatter than a Sumo Wrestler's weight", "Amna sucks like the dog i see enjoying in the dranaige"]
-  replies = random.choice(replies)
-  await ctx.send(replies)
+
+
+
 
 
 
