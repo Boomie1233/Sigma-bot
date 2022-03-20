@@ -39,15 +39,14 @@ for cog in os.listdir("./cogs"):
             print(f"{cog} Can not be loaded")
             raise e
 
-guild = 808704986485620736
-guild2= 910811019608223754
-guild1 = 947151111037526096
+guild = 808704986485620736,910811019608223754,947151111037526096
+
 @bot.command()
 async def ping(ctx):
     await ctx.send(f"{round(bot.latency * 1000)} ms")
 
 
-@bot.slash_command(name = "rickroll", description="Rickrolls you", guild_ids=[guild, guild2, guild1])
+@bot.slash_command(name = "rickroll", description="Rickrolls you", guild_ids=[808704986485620736, 910811019608223754, 947151111037526096])
 async def rickroll(interaction: Interaction):
     await interaction.response.send_message("https://tenor.com/view/rick-astly-rick-rolled-gif-22755440"
                    )
@@ -67,7 +66,7 @@ async def poll(ctx, title, optionone=None, optiontwo=None):
     await message.add_reaction("2️⃣")
 
 
-@bot.slash_command(name = "dhillan", description= "gives dhillan dialogues", guild_ids= [guild, guild1, guild2])
+@bot.slash_command(name = "dhillan", description= "gives dhillan dialogues", guild_ids= [ 808704986485620736,910811019608223754,947151111037526096])
 async def dhillan(interaction: Interaction):
     dhillan = [
         "all hates me anyways",
@@ -94,7 +93,7 @@ async def dhillan(interaction: Interaction):
     await interaction.response.send_message(dhillan)
 
 
-@bot.slash_command(name = "hecker", description= "Gives hecker dialogues" , guild_ids= [guild, guild1, guild2])
+@bot.slash_command(name = "hecker", description= "Gives hecker dialogues" , guild_ids= [ 808704986485620736,910811019608223754,947151111037526096])
 async def hecker(interaction: Interaction):
     damn = [
         "kulukulukuluku wassup guys", "djal fdlskjafkldjas;fd",
@@ -109,7 +108,7 @@ async def hecker(interaction: Interaction):
     await interaction.response.send_message(hecker)
 
 
-@bot.slash_command(name = "emil", description= "Gives emil dialogues", guild_ids=[guild, guild1, guild2] )
+@bot.slash_command(name = "emil", description= "Gives emil dialogues", guild_ids= [808704986485620736,910811019608223754,94715111103752609] )
 async def emil(interaction:Interaction):
       emil = [
         "ninde achan pavam for having an idiot like you", "jk.....ROWLING",
