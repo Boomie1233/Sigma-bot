@@ -8,7 +8,7 @@ class slash(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @nextcord.slash_command(name = "dhillan", description= "Give dhillan dialogues", guild_ids= ["808704986485620736", "947151111037526096", "910811019608223754"])
+    @nextcord.slash_command(name = "dialogues", description= "Give dialogues", guild_ids = [808704986485620736, 947151111037526096, 910811019608223754])
     async def dhillan(self, interaction: Interaction):
         dhillan = [
                "all hates me anyways",
@@ -16,7 +16,6 @@ class slash(commands.Cog):
         "tell what u want",
         "roast what u want",
         "frick u mate",
-        "poi chavada",
         "REVIVE REVIVE REVIVE TUUUUUUUUUUUUUU",
         "ok",
         "the shiddy never sleeps tonight DADADADA DADADA DADADADADAADA",
@@ -28,8 +27,9 @@ class slash(commands.Cog):
         "bye motherfathers",
         "bish",
         "this makes my butt feel good",
-        "GOOGLE SEND 100 GUNDAAS TO MAAM'S HOUSE",
-        "tududududdududud"
+        "GOOGLE SEND 100 GANGSTERS TO MAAM'S HOUSE",
+        "tududududdududud",
+        "poi chavada"
         ]
         dhillan = random.choice(dhillan)
         await interaction.response.send_message(dhillan)
