@@ -39,7 +39,7 @@ for cog in os.listdir("./cogs"):
             print(f"{cog} Can not be loaded")
             raise e
 
-guild = 808704986485620736,910811019608223754,947151111037526096
+
 
 @bot.command()
 async def ping(ctx):
@@ -105,7 +105,7 @@ async def hecker(interaction: Interaction):
         "pls dont remove me pls :(", "shut up man"
     ]
     damn = random.choice(damn)
-    await interaction.response.send_message(hecker)
+    await interaction.response.send_message(damn)
 
 
 @bot.slash_command(name = "emil", description= "Gives emil dialogues", guild_ids= [808704986485620736,910811019608223754,94715111103752609] )

@@ -19,7 +19,11 @@ class Moderation(commands.Cog):
     else:
       await ctx.send("We dont support overthrowing people here. PREIOD")
 
-
+  @kick.error
+  async def kick_error(self,ctx, error):
+    if isinstance(error, commands.MissingRequiredArgument):
+      embed = nextcord.Embed(title = "Commands : Kick", description= "Syntax: kick <member> <reason>")
+      await ctx.send(embed)
       
 
 
@@ -34,6 +38,12 @@ class Moderation(commands.Cog):
          await ctx.send(embed=embed)
       else:
          await ctx.send("We dont support overthrowing people here. PERIOD")
+
+  @ban.error
+  async def ban_error(self,ctx, error):
+    if isinstance(error, commands.MissingRequiredArgument):
+      embed = nextcord.Embed(title = "Commands : Ban", description= "Syntax: ban <member> <reason>")
+      await ctx.send(embed)
 
 
   @commands.command()
