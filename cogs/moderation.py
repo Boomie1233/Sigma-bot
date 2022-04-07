@@ -72,7 +72,7 @@ class Moderation(commands.Cog):
 
 
   @commands.command()
-  @has_permissions(ban_member = True)
+  @has_permissions(ban_members = True)
   async def timeout(self,ctx, member:nextcord.Member, time, reason = None):
      if member.top_role <= ctx.author.top_role:
 
@@ -85,7 +85,7 @@ class Moderation(commands.Cog):
        await ctx.send("We dont support overthrowing here")
 
   @commands.command()
-  @has_permissions (ban_member = True)
+  @has_permissions (ban_members = True)
   async def untimeout(self,ctx, member:nextcord.Member):
        if member.top_role <= ctx.author.top_role:
           await member.edit(timeout = None)
