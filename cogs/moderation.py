@@ -72,7 +72,7 @@ class Moderation(commands.Cog):
 
 
   @commands.command()
-  @has_permissions(moderator_member = True)
+  @has_permissions(moderate_member = True)
   async def timeout(self,ctx, member:nextcord.Member, time, reason = None):
      if member.top_role <= ctx.author.top_role:
 
@@ -120,7 +120,7 @@ class Moderation(commands.Cog):
        overwrite.send_messages = True
        await ctx.channel.set_permissions(ctx.guild.default_role, overwrite = overwrite)
        await ctx.send("This channel is unlocked. Now tell what u want")
-       
+
 
 
 
