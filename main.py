@@ -169,7 +169,7 @@ async def timer(ctx, time, topic = None):
      time_period = int(time[0]) * time_convert[time[-1]]
      embed = nextcord.Embed(title = "Timer set", description= f"Time set for {time} due to {topic}")
      await ctx.send(embed=embed)
-     asyncio.sleep(time_period)
+     await asyncio.sleep(time_period)
      await ctx.send(f"{ctx.author.mention} the timer for {topic} has run out")
      await ctx.author.send(f"Your timer for {topic} has run out")
 
