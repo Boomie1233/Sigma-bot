@@ -66,21 +66,26 @@ class Moderation(commands.Cog):
           await ctx.guild.unban(user)
           embed = nextcord.Embed(title = f"Unbanned {user}", description = f"{user} is removed from the blacklist of the cult. Party time")
           await ctx.send(embed=embed)
+       else:
+          embed2 = nextcord.Embed(title = "User cannot be found", description= "The given user cannot be found in ban list")
+          await ctx.send(embed=embed2)
 
 
   @commands.command()
-  @has_permissions(ban_members = True)
+  @has_permissions(moderator_member = True)
   async def timeout(self,ctx, member:nextcord.Member, time, reason = None):
      if member.top_role <= ctx.author.top_role:
 
 
        time = humanfriendly.parse_timespan(time)
        await member.edit(timeout = nextcord.utils.utcnow()+datetime.timedelta(seconds = time))
-       embed = nextcord.Embed(title = f"Timedout {member}", description =f"{member}s mouth is shut by {ctx.author.mention}. Good luck trying to speak")
+       embed = nextcord.Embed(title = f"Timedout {member}", description =f"{member}s mouth is shut by {ctx.author.mention} for {reason}. Good luck trying to speak")
        await ctx.send(embed=embed)
+     else:
+       await ctx.send("We dont support overthrowing here")
 
   @commands.command()
-  @has_permissions(ban_members = True)
+  @has_permissions (moderate_member = True)
   async def untimeout(self,ctx, member:nextcord.Member):
        if member.top_role <= ctx.author.top_role:
           await member.edit(timeout = None)
@@ -115,6 +120,7 @@ class Moderation(commands.Cog):
        overwrite.send_messages = True
        await ctx.channel.set_permissions(ctx.guild.default_role, overwrite = overwrite)
        await ctx.send("This channel is unlocked. Now tell what u want")
+       
 
 
 
