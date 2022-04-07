@@ -120,11 +120,11 @@ async def emil(interaction:Interaction):
 
 
 
-@bot.command()
-async def toss(ctx):
-    coin = ["heads", "tails"]
-    coin = random.choice(coin)
-    await ctx.send(f"{ctx.author.mention} {coin}")
+@bot.slash_command(name = "toss", description = "give heads or tails",  guild_ids= [808704986485620736,910811019608223754,94715111103752609])
+async def toss(interaction:Interaction):
+     coin = ["heads", "tails"]
+     coin = random.choice(coin)
+     await interaction.response.send_message(coin)
 
 
 @bot.command(name="8ball")
