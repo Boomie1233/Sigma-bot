@@ -116,6 +116,7 @@ class utility(commands.Cog):
         else:
             embed = nextcord.Embed(title = "Stupid Thendi Alavaladi Rascal (STARP) rate" , description= f"{member} is {percent}% starp")
         await ctx.send(embed=embed)
+    
 
 
 

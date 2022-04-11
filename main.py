@@ -115,6 +115,16 @@ async def toss(interaction:Interaction):
      coin = random.choice(coin)
      await interaction.response.send_message(coin)
 
+@bot.slash_command(name = "thendis", description = "give thendis",  guild_ids= [808704986485620736,910811019608223754,94715111103752609])
+async def thendis(interaction:Interaction):
+     thendis = ["https://cdn.discordapp.com/attachments/947151111037526099/958733494333358162/amna_edit.jpg", "https://cdn.discordapp.com/attachments/947151111037526099/958641035175686174/saket.jpg"]
+
+     thendis= random.choice(thendis)
+     await interaction.response.send_message(thendis)
+
+
+
+    
 
 
     
