@@ -164,14 +164,27 @@ async def timedpoll(ctx, title,time, optionone=None, optiontwo=None):
     await ctx.send("The poll is done")
 
 @bot.command()
-async def timer(ctx, time, topic = None):
+async def timer(ctx, time,*, topic = None):
      time_convert = {"s": 1, "m": 60, "h": 3600, "d": 86400}
-     time_period = int(time[0]) * time_convert[time[-1]]
+     if len(time) == 2:
+         time_period = int(time[0]) * time_convert[time[-1]]
+     elif len(time) == 3:
+         time_count = time[0] + time[1]
+         time_period = int(time_count) * time_convert[time[-1]]
+     elif len(time) == 4:
+          time_count = time[0] + time[1] + time[2]
+          time_period = int(time_count) * time_convert[time[-1]]
+     else:
+         await ctx.send("Use a bigger unit please")
+
+         
      embed = nextcord.Embed(title = "Timer set", description= f"Time set for {time} due to {topic}")
      await ctx.send(embed=embed)
      await asyncio.sleep(time_period)
      await ctx.send(f"{ctx.author.mention} the timer for {topic} has run out")
      await ctx.author.send(f"Your timer for {topic} has run out")
+
+
 
 
 

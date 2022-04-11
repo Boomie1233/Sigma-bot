@@ -60,15 +60,10 @@ class Help(commands.Cog):
                     inline=True)
     embed.add_field(name = "toss", value = "tosses a coin", inline = True)
     embed.add_field(name = "8ball", value = "Gives the bot's opinion/prediction on a question", inline = True)
+    embed.add_field(name = "timer", value = "Sets a remainder for a task you want to do without using a seperate app", inline = True)
 
     await ctx.send(embed=embed)
 
-  @commands.command()
-  async def changelog(self, ctx):
-    embed = nextcord.Embed(title = "New developments")
-    embed.add_field(name = "New features", value = "Timeout\n syntax: -timeout <member> <time> <reason>\nUse: Uses a new feature named timeouts to timeout a user", inline = True)
-    embed.add_field(name = "Sigma bot is no longer open source", value = "Due to a alavaladhi named ThemanTheking aka very pro stealing my code we decided to make sigma bot closed source", inline = True)
-    embed.add_field(name = "Bye bye mute", value = "Since the timeout feature is added any command related to mute will be removed since it is not longer needed.")
-    await ctx.send(embed=embed)
+
 def setup(bot):
   bot.add_cog(Help(bot))
