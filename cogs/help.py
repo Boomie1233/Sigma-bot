@@ -1,10 +1,7 @@
 import nextcord
 from nextcord.ext import commands
 
-class Help(commands.Cog):
-  def __init__(self, bot):
-    self.bot = bot
-
+class help(commands.Cog):
   @commands.command()
   async def help(self, ctx):
     embed = nextcord.Embed(title="Commands")
@@ -60,19 +57,15 @@ class Help(commands.Cog):
                     inline=True)
     embed.add_field(name = "toss", value = "tosses a coin", inline = True)
     embed.add_field(name = "8ball", value = "Gives the bot's opinion/prediction on a question", inline = True)
-    embed.add_field(name = "timer", value = "Sets a remainder for a task you want to do without using a seperate app", inline = True)
-     embed.add_field(name = "sigma", value = "Gives how sigma  a person is ( just mention them to find out)", inline = True)
-     embed.add_field(name = "casual", value = "Gives how casual a person is (just mention them to find out)", inline = True)
-     embed.add_field(name = "stark", value = "Gives how stark a person is (just mention them to find out)", inline = True)
-      embed.add_field(name = "starp", value = "Gives how starp a person is (just mention them to find out)", inline = True)
-
-
-
-
-
+    embed.add_field(name = "timer", value = "Syntax: -timer <time> <topic>\n Use: Sets remainder for a task", inline = True)
+    embed.add_field(name = "sigma", value = "Gives how sigma a person is  (just mention to find out)", inline = True)
+    embed.add_field(name = "casual", value = "Gives how casual a person is (just mention to find out)", inline= True)
+    embed.add_field(name = "stark", value = "Gives how stark a person is (just mention to find out)", inline= True)
+    embed.add_field(name = "starp", value = "Gives how starp a person is (just mention to find out)", inline= True)
+    
 
     await ctx.send(embed=embed)
 
 
 def setup(bot):
-  bot.add_cog(Help(bot))
+  bot.add_cog(help(bot))
