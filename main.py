@@ -142,4 +142,4 @@ async def thendis(interaction:Interaction):
 
 
 
-bot.run("OTI3Nzk5NTA0Mjg2MTIyMDI0.YdPenw.v6_Ch5iPpUTohay-eJQ412PJSn8")
+bot.run("OTI3Nzk5NTA0Mjg2MTIyMDI0.YdPenw.izbYQtDJAmZ6lgfn77t9aMXtyVo")
