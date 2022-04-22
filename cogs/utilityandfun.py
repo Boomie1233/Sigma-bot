@@ -3,6 +3,7 @@ import nextcord
 import asyncio
 from nextcord.ext import commands
 from nextcord.member import Member
+import random
 
 class utility(commands.Cog):
     def __init__(self, bot):
@@ -116,6 +117,15 @@ class utility(commands.Cog):
         else:
             embed = nextcord.Embed(title = "Stupid Thendi Alavaladi Rascal (STARP) rate" , description= f"{member} is {percent}% starp")
         await ctx.send(embed=embed)
+    @commands.command()
+    async def _8ball(self, ctx,*, Title = None):
+        responses = ["HELL YEA" , "HELL NO", "Most probably yea", "Most probably no", "Maybe", "Frick off dont ask me that", "Very likely yea", "Very likely no"]
+        responses = random.choice(responses)
+        if Title == None:
+            ctx.send("Give me a title dummy")
+        else:
+            embed = nextcord.Embed(name = Title, description= responses)
+            await ctx.send(embed=embed)
     
 
 
