@@ -117,6 +117,7 @@ class utility(commands.Cog):
         else:
             embed = nextcord.Embed(title = "Stupid Thendi Alavaladi Rascal (STARP) rate" , description= f"{member} is {percent}% starp")
         await ctx.send(embed=embed)
+
     @commands.command()
     async def _8ball(self, ctx,*, Title = None):
         responses = ["HELL YEA" , "HELL NO", "Most probably yea", "Most probably no", "Maybe", "Frick off dont ask me that", "Very likely yea", "Very likely no"]
