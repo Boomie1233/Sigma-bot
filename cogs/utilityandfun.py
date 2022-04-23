@@ -1,8 +1,10 @@
-﻿from random import randint
+import random
+from random import randint
 import nextcord
 import asyncio
 from nextcord.ext import commands
 from nextcord.member import Member
+
 
 class utility(commands.Cog):
     def __init__(self, bot):
@@ -115,6 +117,27 @@ class utility(commands.Cog):
             embed = nextcord.Embed(title = "Stupid Thendi Alavaladi Rascal (STARP) rate" , description= f"{member.mention} is {percent}% starp")
         else:
             embed = nextcord.Embed(title = "Stupid Thendi Alavaladi Rascal (STARP) rate" , description= f"{member} is {percent}% starp")
+        await ctx.send(embed=embed)
+
+    @commands.command(name = "8ball")
+    async def _8ball(self, ctx,*, Title = None):
+        responses = ["HELL YEA" , "HELL NO", "Most probably yea", "Most probably no", "Maybe", "Frick off dont ask me that", "Very likely yea", "Very likely no"]
+        responses = random.choice(responses)
+        if Title == None:
+            ctx.send("Give me a title dummy")
+        else:
+            embed = nextcord.Embed(name = Title, description= responses)
+            await ctx.send(embed=embed)
+
+    @commands.command()
+    async def sus(self, ctx,*, member = None):
+        percent = randint(0, 100)
+        if member is None:
+            embed = nextcord.Embed(title = "Sus rate", description= f"{ctx.author.mention} is {percent}% sus")
+        elif member is nextcord.Member:
+            embed = nextcord.Embed(title = "Sus rate" , description= f"{member.mention} is {percent}% sus")
+        else:
+            embed = nextcord.Embed(title = "Sus rate" , description= f"{member} is {percent}% sus")
         await ctx.send(embed=embed)
     
 
