@@ -2,7 +2,7 @@
 from random import randint
 import nextcord
 import asyncio
-from PIL import Image
+from pillow import Image
 from io import BytesIO
 from nextcord.ext import commands
 from nextcord.member import Member
