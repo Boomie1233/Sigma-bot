@@ -46,7 +46,7 @@ async def ping(ctx):
     await ctx.send(f"{round(bot.latency * 1000)} ms")
 
 
-@bot.slash_command(name = "rickroll", description="Rickrolls you", guild_ids=[808704986485620736, 910811019608223754, 947151111037526096])
+@bot.slash_command(name = "rickroll", description="Rickrolls you", guild_ids=[808704986485620736, 985909972971950110])
 async def rickroll(interaction: Interaction):
     await interaction.response.send_message("https://tenor.com/view/rick-astly-rick-rolled-gif-22755440"
                    )
@@ -55,7 +55,7 @@ async def rickroll(interaction: Interaction):
 
 
 
-@bot.slash_command(name = "dhillan", description= "gives dhillan dialogues", guild_ids= [ 808704986485620736,910811019608223754,947151111037526096])
+@bot.slash_command(name = "dhillan", description= "gives dhillan dialogues", guild_ids= [ 808704986485620736,985909972971950110])
 async def dhillan(interaction: Interaction):
     dhillan = [
         "all hates me anyways",
@@ -82,7 +82,7 @@ async def dhillan(interaction: Interaction):
     await interaction.response.send_message(dhillan)
 
 
-@bot.slash_command(name = "hecker", description= "Gives hecker dialogues" , guild_ids= [ 808704986485620736,910811019608223754,947151111037526096])
+@bot.slash_command(name = "hecker", description= "Gives hecker dialogues" , guild_ids= [ 808704986485620736,985909972971950110])
 async def hecker(interaction: Interaction):
     damn = [
         "kulukulukuluku wassup guys", "djal fdlskjafkldjas;fd",
@@ -97,7 +97,7 @@ async def hecker(interaction: Interaction):
     await interaction.response.send_message(damn)
 
 
-@bot.slash_command(name = "emil", description= "Gives emil dialogues", guild_ids= [808704986485620736,910811019608223754,947151111037526096] )
+@bot.slash_command(name = "emil", description= "Gives emil dialogues", guild_ids= [808704986485620736,985909972971950110] )
 async def emil(interaction:Interaction):
       emil = [
         "ninde achan pavam for having an idiot like you", "jk.....ROWLING",
@@ -109,16 +109,15 @@ async def emil(interaction:Interaction):
 
 
 
-@bot.slash_command(name = "toss", description = "give heads or tails",  guild_ids= [808704986485620736,910811019608223754,947151111037526096])
+@bot.slash_command(name = "toss", description = "give heads or tails",  guild_ids= [808704986485620736,985909972971950110])
 async def toss(interaction:Interaction):
      coin = ["heads", "tails"]
      coin = random.choice(coin)
      await interaction.response.send_message(coin)
 
-@bot.slash_command(name = "thendis", description = "give thendis",  guild_ids= [808704986485620736,910811019608223754,947151111037526096])
+@bot.slash_command(name = "thendis", description = "give thendis",  guild_ids= [808704986485620736,985909972971950110])
 async def thendis(interaction:Interaction):
-     thendis = ["https://cdn.discordapp.com/attachments/947151111037526099/958733494333358162/amna_edit.jpg", "https://cdn.discordapp.com/attachments/947151111037526099/958641035175686174/saket.jpg"]
-
+     thendis = [ "ani.jpg", "nice farriz.jpg", "saket.jpg", "amna_edit.jpg"]
      thendis= random.choice(thendis)
      await interaction.response.send_message(thendis)
 

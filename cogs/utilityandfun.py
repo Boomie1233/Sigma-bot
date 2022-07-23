@@ -2,6 +2,8 @@
 from random import randint
 import nextcord
 import asyncio
+from PIL import Image
+from io import BytesIO
 from nextcord.ext import commands
 from nextcord.member import Member
 
@@ -139,6 +141,26 @@ class utility(commands.Cog):
         else:
             embed = nextcord.Embed(title = "Sus rate" , description= f"{member} is {percent}% sus")
         await ctx.send(embed=embed)
+    @commands.command()
+    async def patti(self, ctx,user: nextcord.Member = None):
+        if user == None:
+           await ctx.send("Give me a user to edit");
+        dog = Image.open("patti.jpg")
+        asset = user.display_avatar.with_size(32)
+
+        data = BytesIO(await asset.read())
+        pfp = Image.open(data)
+
+        pfp = pfp.resize((153, 160))
+
+        dog.paste(pfp, (423, 131))
+
+        dog.save("profile.jpg")
+
+        await ctx.send(file = nextcord.File(r"C:\Users\USER\Desktop\Sigma bot\profile.jpg"))
+
+
+
     
 
 
