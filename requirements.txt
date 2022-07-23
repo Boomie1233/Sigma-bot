@@ -1,2 +1,4 @@
 nextcord.py
 humanfriendly
+PIL
+BytesIo
