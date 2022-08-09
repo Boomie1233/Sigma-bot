@@ -1,14 +1,16 @@
+from msilib.schema import File
 import os
 import nextcord
 import random
-import asyncio
+from PIL import Image
+from io import BytesIO
 from nextcord import Interaction
 from nextcord import Intents
 from nextcord.ext import commands
 
 intents = Intents.default()
 intents.members = True
-intents.message_content = True
+intents.messages = True
 
 
 bot = commands.Bot(command_prefix='-', intents=intents, case_insensitive=True)
@@ -121,6 +123,30 @@ async def thendis(interaction:Interaction):
      thendis = [ "ani.jpg", "nice farriz.jpg", "saket.jpg", "amna_edit.jpg"]
      thendis= random.choice(thendis)
      await interaction.response.send_message(thendis)
+
+
+@bot.command()
+async def patti(ctx, user:nextcord.Member):
+    if user == None:
+           await ctx.send("Give me a user to edit");
+    dog = Image.open('./pics/patti.jpg')
+    asset = user.display_avatar.with_size(32)
+
+    data = BytesIO(await asset.read())
+    pfp = Image.open(data)
+
+    pfp = pfp.resize((153, 160))
+ 
+    dog.paste(pfp, (423, 131))
+
+    dog.save("profile.jpg")
+
+    await ctx.send(file = nextcord.File('./profile.jpg'))
+        
+
+
+
+
 
 
 
