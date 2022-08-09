@@ -1,4 +1,4 @@
-from msilib.schema import File
+
 import os
 import nextcord
 import random
