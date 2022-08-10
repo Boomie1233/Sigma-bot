@@ -120,7 +120,7 @@ async def toss(interaction:Interaction):
 
 @bot.slash_command(name = "thendis", description = "give thendis",  guild_ids= [808704986485620736,985909972971950110])
 async def thendis(interaction:Interaction):
-     thendis = [ "ani.jpg", "nice farriz.jpg", "saket.jpg", "amna_edit.jpg"]
+     thendis = [ "./pics/amna_edit.jpg", "./pics/nice farriz.jpg", "./pics/saket.jpg", "./pics/amna_edit.jpg"]
      thendis= random.choice(thendis)
      await interaction.response.send_message(thendis)
 
