@@ -122,7 +122,7 @@ async def toss(interaction:Interaction):
 async def thendis(interaction:Interaction):
      thendis = [ "./pics/amna_edit.jpg", "./pics/nice farriz.jpg", "./pics/saket.jpg", "./pics/amna_edit.jpg"]
      thendis= random.choice(thendis)
-     await interaction.response.send_message(thendis)
+     await interaction.response.send_message(file = nextcord.File(thendis))
 
 
 @bot.command()
