@@ -143,4 +143,4 @@ async def thendis(interaction:Interaction):
 
 
 
-bot.run("OTI3Nzk5NTA0Mjg2MTIyMDI0.YdPenw.izbYQtDJAmZ6lgfn77t9aMXtyVo")
+bot.run(TOKEN)
