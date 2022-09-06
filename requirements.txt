@@ -1,4 +1,5 @@
 nextcord.py
 humanfriendly
 pillow
+python-dotenv
 
