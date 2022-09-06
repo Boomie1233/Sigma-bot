@@ -101,7 +101,7 @@ async def hecker(interaction: Interaction):
     await interaction.response.send_message(damn)
 
 
-@bot.slash_command(name = "emil", description= "Gives emil dialogues", guild_ids= [808704986485620736,985909972971950110, 1010526444646060062] )
+@bot.slash_command(name = "emil", description= "Gives emil dialogues", guild_ids= [808704986485620736,910811019608223754,947151111037526096] )
 async def emil(interaction:Interaction):
       emil = [
         "ninde achan pavam for having an idiot like you", "jk.....ROWLING",
@@ -113,13 +113,13 @@ async def emil(interaction:Interaction):
 
 
 
-@bot.slash_command(name = "toss", description = "give heads or tails",  guild_ids= [808704986485620736,985909972971950110, 1010526444646060062])
+@bot.slash_command(name = "toss", description = "give heads or tails",  guild_ids= [808704986485620736,910811019608223754,947151111037526096])
 async def toss(interaction:Interaction):
      coin = ["heads", "tails"]
      coin = random.choice(coin)
      await interaction.response.send_message(coin)
 
-@bot.slash_command(name = "thendis", description = "give thendis",  guild_ids= [808704986485620736,985909972971950110, 1010526444646060062])
+@bot.slash_command(name = "thendis", description = "give thendis",  guild_ids= [808704986485620736,910811019608223754,947151111037526096])
 async def thendis(interaction:Interaction):
      thendis = [ "./pics/amna_edit.jpg", "./pics/nice farriz.jpg", "./pics/saket.jpg", "./pics/amna_edit.jpg"]
      thendis= random.choice(thendis)
