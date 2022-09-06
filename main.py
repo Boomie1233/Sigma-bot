@@ -11,6 +11,7 @@ from nextcord.ext import commands
 load_dotenv()
 intents = Intents.default()
 intents.members = True
+intents.messages = True
 
 
 
