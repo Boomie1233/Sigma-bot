@@ -41,8 +41,8 @@ async def main():
     for cog in os.listdir(directory):
         if cog.endswith(".py"):
             try:
-                bot.load_extension(cog)
                 cog = f"cogs.{cog.replace('.py', '')}"
+                await bot.load_extension(cog)
             except Exception as e:
                 print(f"{cog} Can not be loaded")
                 raise e

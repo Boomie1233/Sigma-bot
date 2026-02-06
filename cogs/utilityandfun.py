@@ -5,6 +5,7 @@ import random
 import asyncio
 from io import BytesIO
 from PIL import Image
+import humanfriendly
 
 class utilityandfun(commands.Cog):
     """
@@ -21,13 +22,12 @@ class utilityandfun(commands.Cog):
     @nextcord.slash_command(name="timer", description="Sets a countdown timer", guild_ids=guild_ids)
     async def timer(self, interaction: Interaction, topic: str, time: str = "60s"):
         """Calculates time units and alerts the user when the duration expires."""
-        time_convert = {"s": 1, "m": 60, "h": 3600, "d": 86400}
-        unit = time[-1].lower()
-        
-        if unit not in time_convert or not time[:-1].isdigit():
-            return await interaction.response.send_message("Invalid format! Use e.g., '10s', '5m', '1h'.", ephemeral=True)
+        try:
+             seconds = humanfriendly.parse_timespan(time)
+        except humanfriendly.InvalidTimespan:
+            return await interaction.response.send_message("Invalid time format. Use formats like '30s', '5m', or '2h'.", ephemeral=True)
 
-        time_period = int(time[:-1]) * time_convert[unit]
+        
         
         embed = nextcord.Embed(
             title="Timer Set ⏱️", 
@@ -36,7 +36,7 @@ class utilityandfun(commands.Cog):
         )
         await interaction.response.send_message(embed=embed)
         
-        await asyncio.sleep(time_period)
+        await asyncio.sleep(seconds)
         await interaction.followup.send(f"{interaction.user.mention}, your timer for **{topic}** is up!")
         try:
             await interaction.user.send(f"Notification: Your timer for {topic} has finished.")
