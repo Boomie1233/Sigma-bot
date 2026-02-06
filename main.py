@@ -10,6 +10,7 @@ intents.members = True
 intents.messages = True
 intents.message_content = True
 
+directory = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cogs")
 
 
 bot = commands.Bot(command_prefix='-', intents=intents, case_insensitive=True)
@@ -25,7 +26,7 @@ async def on_ready():
      
   
 
-for cog in os.listdir("Sigma-bot\cogs"):
+for cog in os.listdir(directory):
     if cog.endswith(".py"):
         try:
             cog = f"cogs.{cog.replace('.py', '')}"
