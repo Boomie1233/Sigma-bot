@@ -26,7 +26,6 @@ class help(commands.Cog):
         embed.add_field(name="🛡️ Moderation", value=(
             "`/kick` - Remove a member\n"
             "`/ban` - Permanently ban a member\n"
-            "`/unban` - Unban via User ID\n"
             "`/timeout` - Temporarily mute a user\n"
             "`/clear` - Bulk delete messages"
         ), inline=False)

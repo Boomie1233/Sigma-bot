@@ -11,8 +11,7 @@ intents.members = True
 
 class moderation(commands.Cog):
     """
-    Standard Moderation Suite.
-    Designed for professional server management and administrative oversight.
+    ---MODERATION---
     """
     
     guild_ids = [808704986485620736, 985909972971950110, 1010526444646060062, 1012306961364168774]
