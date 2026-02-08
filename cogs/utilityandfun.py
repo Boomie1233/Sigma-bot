@@ -3,6 +3,7 @@ from nextcord.ext import commands
 from nextcord import Interaction, SlashOption
 import random
 import asyncio
+import os
 from io import BytesIO
 from PIL import Image
 import humanfriendly
@@ -50,9 +51,10 @@ class utilityandfun(commands.Cog):
         if not (2 <= len(option_list) <= 10):
             return await interaction.response.send_message("Please provide between 2 and 10 options.", ephemeral=True)
 
-        time_convert = {"s": 1, "m": 60, "h": 3600}
-        unit = time[-1].lower()
-        time_period = int(time[:-1]) * time_convert.get(unit, 1)
+        try:
+             time_period = humanfriendly.parse_timespan(time)
+        except humanfriendly.InvalidTimespan:
+            return await interaction.response.send_message("Invalid time format. Use formats like '30s', '5m', or '2h'.", ephemeral=True)
 
         emojis = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟"]
         embed = nextcord.Embed(title=f"📊 {title}", description="React to vote!", color=nextcord.Color.green())
@@ -109,16 +111,19 @@ class utilityandfun(commands.Cog):
         await interaction.response.send_message(embed=embed)
 
     @nextcord.slash_command(name="dog", description="Edit a user's avatar onto a dog", guild_ids=guild_ids)
-    async def patti(self, interaction: Interaction, user: nextcord.Member):
+    async def dog(self, interaction: Interaction, user: nextcord.Member):
         """Uses Pillow to manipulate images by overlaying a user's PFP onto a template."""
         await interaction.response.defer()
         try:
-            background = Image.open(r"Sigma-bot\pics\patti.jpg'")
+            base_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+            template_path = os.path.join(base_path, "assets", "dog_template.jpg")
+            background = Image.open(template_path).convert("RGBA")
             asset = user.display_avatar.with_size(128)
             data = BytesIO(await asset.read())
             pfp = Image.open(data).convert("RGBA").resize((153, 160))
 
-            background.paste(pfp, (423, 131), pfp if pfp.mode == 'RGBA' else None)
+
+            background.paste(pfp, (423, 131), pfp)
 
             with BytesIO() as img_bin:
                 background.save(img_bin, 'PNG')
@@ -127,7 +132,7 @@ class utilityandfun(commands.Cog):
         except Exception:
             await interaction.followup.send("Error processing image. Check file paths!")
 
-    # --- FRIEND QUOTES (Simplified logic) ---
+    # --- FRIEND QUOTES ----
 
     @nextcord.slash_command(name="dhillan", guild_ids=guild_ids)
     async def dhillan(self, interaction: Interaction):
