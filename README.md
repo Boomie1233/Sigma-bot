@@ -7,19 +7,26 @@ I learnt the fundamentals of asynchronous programming, interacting with APIs, gi
 Here was the intial tech stack I used
 
 **Phase 1:** I used discord.py and ran my bot locally. It only had commands like kick and ban. It sent responses through pure text messages
+
 **Phase 2:** Collected entertaining quotes from my friends and added fun quotes as well as made utility commands. Learnt how to use embeds
+
 **Phase 3:** Deployed my bot initially through heroku until they discontinued their free tier. 
+
 **Phase 4:** Discord.py got depricated so I shifted to nextcord and also started experimenting with slash commands. Due to the reopening of my school after the COVID lockdown and the exams following that, the project was archived for 4 yeras uptil now
+
 **Now:** Completely migrated to slash commands and deployed my bot through Microsoft Azure
 
 ## Technical Highlights 
 
 -**Cloud Infrastructure**: Currently deployed on Microsoft Azure using a B2ats VM. Formerly deployed on heroku
+
 -**Library Used**: Currently nextcord.py, Formerly used discord.py
 
 ## Features
 -**Moderation Suite** With classic commands like kick, ban, timeout, channel_lock
+
 -**Utility Commands** Like a timer to remind users about incoming tasks and a timed poll feature that implements similar technology
+
 -**Fun/Entertaintment commands** Quote commands and other features which add flavour to group chats. 
 
 To run this project locally or to personalize for your server: 
