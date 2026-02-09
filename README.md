@@ -52,4 +52,4 @@ To run this project locally or to personalize for your server:
 And you are ready to go!
 
 PS: This project is currently archived due to my omy exhausted Azure credits.  Here's a video of me testing out the bot's features and deploying it through Azure to make up for the inconvinience:
-
+https://youtu.be/0XiNSPxyRto
